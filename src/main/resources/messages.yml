@@ -24,4 +24,11 @@ commands:
     money-put: "$prefix &aYou set this block as $value!"
   wallet:
     title: "$prefix" #$balance means balance in player's wallet
-    subtitle: "&6You have &a$balance$ &6in your wallet!" #$balance means balance in player's wallet
+    subtitle: "&6You have &a$balance$currency &6in your wallet!" #$balance means balance in player's wallet
+  admin-wallet:
+    check:
+      title: "$prefix"
+      subtitle: "&5$player &6has &a$balance$currency in his wallet!"
+    set: "$prefix You have set $player's balance to $value$currency!"
+    add: "$prefix You have added $value$currency to $player's balance!"
+    take: "$prefix You have taken $value$currency from $player's balance!"

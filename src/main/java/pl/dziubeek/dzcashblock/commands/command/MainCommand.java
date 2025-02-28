@@ -31,7 +31,7 @@ public class MainCommand extends Command {
     @Override
     public void executeCommand(Sender sender, String[] args) {
         if (args.length < 1) {
-            sender.sendMessage("$p &7Poprawne uzycie: &a" + getUsage());
+            sender.sendMessage(msgconfig.getStringList("commands.usage") + getUsage());
             return;
         } else {
             if(args[0].equalsIgnoreCase("help")) {

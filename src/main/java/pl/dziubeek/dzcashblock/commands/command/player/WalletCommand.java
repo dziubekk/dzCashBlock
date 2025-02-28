@@ -11,7 +11,6 @@ public class WalletCommand extends Command {
 
     private final dzCashBlock plugin;
     private ConfigManager configManager;
-    private FileConfiguration config;
     private FileConfiguration msgconfig;
     private FileConfiguration dataconfig;
 
@@ -27,6 +26,8 @@ public class WalletCommand extends Command {
     @Override
     public void executeCommand(Sender sender, String[] args) {
         Double balance = new Player(sender.getSender().getName()).getBalance();
-        sender.sendTitle(msgconfig.getString("commands.wallet.title").replace("$balance", String.valueOf(balance)), msgconfig.getString("commands.wallet.subtitle").replace("$balance", String.valueOf(balance)));
+        String title = msgconfig.getString("commands.wallet.title").replace("$balance", String.format("%.2f", balance)).replace("$currency", configManager.getConfig().getString("settings.currency-symbol"));
+        String subtitle = msgconfig.getString("commands.wallet.subtitle").replace("$balance", String.format("%.2f", balance)).replace("$currency", configManager.getConfig().getString("settings.currency-symbol"));
+        sender.sendTitle(title, subtitle);
     }
 }

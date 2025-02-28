@@ -4,8 +4,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
-import org.bukkit.entity.Player;
 import pl.dziubeek.dzcashblock.commands.command.MainCommand;
+import pl.dziubeek.dzcashblock.commands.command.admin.adminWalletCommand;
 import pl.dziubeek.dzcashblock.commands.command.admin.fstoneCommand;
 import pl.dziubeek.dzcashblock.commands.command.admin.getBrushCommand;
 import pl.dziubeek.dzcashblock.commands.command.player.WalletCommand;
@@ -15,7 +15,6 @@ import pl.dziubeek.dzcashblock.objects.Sender;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,6 +40,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
         new WalletCommand(plugin);
         new getBrushCommand(plugin);
         new fstoneCommand(plugin);
+        new adminWalletCommand(plugin);
         return this;
     }
 
@@ -93,6 +93,14 @@ public class CommandManager implements CommandExecutor, TabCompleter {
                     suggestions = filter(Arrays.asList("10", "20", "50", "0.10", "0.20", "0.50", "0.01", "0.02", "0.05"), args[0]);
                 }
                 break;
+            case "adminwallet":
+                if (args.length == 1) {
+                    suggestions = filter(Arrays.asList("check", "add", "set", "take"), args[0]);
+                } else if (args.length == 2) {
+                    suggestions = filter(getOnlinePlayerNames(), args[1]);
+                } else if (args.length == 3) {
+                    suggestions = filter(Arrays.asList("10", "20", "50", "100", "200", "500", "1000", "2000", "5000", "10000", "0.10", "0.20", "0.50", "1.00", "2.00", "5.00", "0.01", "0.02", "0.05"), args[2]);
+                }
         }
 
         return suggestions;

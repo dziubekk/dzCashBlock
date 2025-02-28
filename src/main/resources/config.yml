@@ -17,6 +17,12 @@ commands:
       - "gbr"
     usage: "/getbrush"
     description: "Gives you brush!"
+  adminwallet:
+    aliases:
+      - "admin-wallet"
+      - "awallet"
+    usage: "/adminwallet <check/set/add/take> <player> [amount]"
+    description: "Edit wallet of other player!"
 
 brushes:
   1:
