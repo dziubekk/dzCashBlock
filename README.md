@@ -30,6 +30,7 @@ dzCashBlock is a Minecraft plugin that enhances gameplay by introducing a money 
 | `/dzcashblock <authors/help/reload>` | Reloads the plugin configuration. |
 | `/getbrush <type> <player>` | Gives a brush tool to a player. |
 | `/wallet` | Shows player's wallet. |
+| `/adminwallet <add/check/set/take> <player> [amount]` | Edits player's wallet. |
 | `/fstone <amount>` | Puts money in the target block. |
 
 ## Permissions
