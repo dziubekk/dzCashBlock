@@ -1,6 +1,6 @@
-# DzCashBlock
+# dzCashBlock
 
-DzCashBlock is a Minecraft plugin that enhances gameplay by introducing a money drop system and custom brushes for terrain modification.
+dzCashBlock is a Minecraft plugin that enhances gameplay by introducing a money drop system and custom brushes for terrain modification.
 
 ## Features
 
