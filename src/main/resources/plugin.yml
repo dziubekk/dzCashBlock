@@ -1,0 +1,10 @@
+name: dzCashBlock
+version: '${project.version}'
+main: pl.dziubeek.dzcashblock.dzCashBlock
+api-version: '1.13'
+authors: [Dziubeek]
+commands:
+  dzcashblock:
+  wallet:
+  fstone:
+  getbrush:

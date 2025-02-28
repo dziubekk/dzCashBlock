@@ -1,0 +1,90 @@
+commands:
+  wallet:
+    aliases:
+      - "mywallet"
+    usage: "/wallet"
+    description: "Command to check your wallet!"
+  fstone:
+    aliases:
+      - "putblock"
+    usage: "/fstone <amount>"
+    description: "Puts money in the target block!"
+  getbrush:
+    aliases:
+      - "givebrush"
+      - "gbrush"
+      - "getbr"
+      - "gbr"
+    usage: "/getbrush"
+    description: "Gives you brush!"
+
+brushes:
+  1:
+    x: 1
+    y: 1
+    z: 1
+    name: "&6Brush Level 1"
+    lore:
+      - "&6This brush breaks 1 block."
+    material: Material.BLAZE_ROD
+  2:
+    x: 2
+    y: 1
+    z: 2
+    name: "&eBrush Level 2"
+    lore:
+      - "&eThis brush breaks a 2x2 area."
+    material: Material.BLAZE_ROD
+  3:
+    x: 3
+    y: 1
+    z: 3
+    name: "&aBrush Level 3"
+    lore:
+      - "&aThis brush breaks a 3x3 area."
+    material: Material.BLAZE_ROD
+  4:
+    x: 4
+    y: 1
+    z: 4
+    name: "&bBrush Level 4"
+    lore:
+      - "&bThis brush breaks a 4x4 area."
+    material: Material.BLAZE_ROD
+  5:
+    x: 5
+    y: 1
+    z: 5
+    name: "&dBrush Level 5"
+    lore:
+      - "&dThis brush breaks a 5x5 area."
+    material: Material.BLAZE_ROD
+
+settings:
+  currency-symbol: "$"
+  nobreak-blocks:
+    - DIAMOND_ORE
+    - BEDROCK
+
+drops:
+  1usd:
+    chance: 0.00000001
+    name: "1"
+    value: 1
+  0_1usd:
+    chance: 0.00001
+    name: "0.10"
+    value: 0.1
+  0_2usd:
+    chance: 0.000001
+    name: "0.20"
+    value: 0.2
+  0_5usd:
+    chance: 0.0000001
+    name: "0.50"
+    value: 0.5
+  0_01usd:
+    chance: 0.01
+    name: "0.01"
+    value: 0.01
+

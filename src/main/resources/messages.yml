@@ -1,0 +1,22 @@
+plugin:
+  prefix: "&7[&cdz&aCash&6Block&7]"
+  reload: "$prefix &6Plugin został przeładowany!"
+
+drops:
+  title: "$prefix"
+  subtitle: "&6You dropped $value$currency!"
+
+commands:
+  usage: "$prefix &6Poprawne użycie: &b$usage"
+  nopermission: "$prefix &cYou don't have permission to use this command. ($permission)" #$permission means required permission
+  specifybrushlevel: "$prefix &cPlease specify a brush level."
+  invalidbrushlevel: "$prefix &cInvalid brush level."
+  noplayerfound: "$prefix &cNo player found."
+  brushreceived: "$prefix &aYou have received a brush: $brush"
+  only-player-command: "$prefix Only player can specify this command!"
+  invalid-number-format: "$prefix &cInvalid number format!"
+  fstone:
+    money-put: "$prefix &aYou set this block as $value!"
+  wallet:
+    title: "$prefix" #$balance means balance in player's wallet
+    subtitle: "&6You have &a$balance$ &6in your wallet!" #$balance means balance in player's wallet
