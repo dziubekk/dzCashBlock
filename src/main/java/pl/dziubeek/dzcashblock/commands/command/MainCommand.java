@@ -8,6 +8,7 @@ import pl.dziubeek.dzcashblock.commands.CommandManager;
 import pl.dziubeek.dzcashblock.configs.ConfigManager;
 import pl.dziubeek.dzcashblock.dzCashBlock;
 import pl.dziubeek.dzcashblock.objects.Sender;
+import pl.dziubeek.dzcashblock.utils.ChatUtilities;
 
 import java.util.List;
 
@@ -34,9 +35,11 @@ public class MainCommand extends Command {
             return;
         } else {
             if(args[0].equalsIgnoreCase("help")) {
-                sender.sendMessage("$p");
-                sender.sendMessage("");
-                sender.sendMessage("$p");
+                List<String> help = msgconfig.getStringList("commands.help");
+                help = ChatUtilities.fixColor(help);
+                for(String s : help) {
+                    sender.sendMessage(s);
+                }
             } else if(args[0].equalsIgnoreCase("authors")) {
                 List<String> authors = plugin.getDescription().getAuthors();
                 sender.sendMessage("$prefix &6Plugin authors: &b" + String.join("&6, &b", authors));

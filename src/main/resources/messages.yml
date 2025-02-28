@@ -7,6 +7,11 @@ drops:
   subtitle: "&6You dropped $value$currency!"
 
 commands:
+  help:
+    - "$prefix"
+    - "&6/dzcashblock - main command"
+    - "&6/wallet - shows up your wallet"
+    - "$prefix"
   usage: "$prefix &6Poprawne użycie: &b$usage"
   nopermission: "$prefix &cYou don't have permission to use this command. ($permission)" #$permission means required permission
   specifybrushlevel: "$prefix &cPlease specify a brush level."
