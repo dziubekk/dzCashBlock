@@ -7,6 +7,7 @@ import pl.dziubeek.dzcashblock.configs.ConfigManager;
 import pl.dziubeek.dzcashblock.configs.DataHandler;
 import pl.dziubeek.dzcashblock.listeners.BlockBreakListener;
 import pl.dziubeek.dzcashblock.listeners.BrushListener;
+import pl.dziubeek.dzcashblock.listeners.ItemDropListener;
 import pl.dziubeek.dzcashblock.listeners.MoneyDrop;
 import pl.dziubeek.dzcashblock.objects.Sender;
 
@@ -35,6 +36,7 @@ public final class dzCashBlock extends JavaPlugin {
         sender.sendMessage("$prefix Registering events...");
         this.getServer().getPluginManager().registerEvents(new BrushListener(this), this);
         this.getServer().getPluginManager().registerEvents(new BlockBreakListener(this), this);
+        this.getServer().getPluginManager().registerEvents(new ItemDropListener(this), this);
         sender.sendMessage("$prefix Plugin has been loaded!");
     }
 

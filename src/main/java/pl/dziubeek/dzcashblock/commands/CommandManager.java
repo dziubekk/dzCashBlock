@@ -1,11 +1,10 @@
 package pl.dziubeek.dzcashblock.commands;
 
 import org.bukkit.Bukkit;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabCompleter;
+import org.bukkit.command.*;
 import pl.dziubeek.dzcashblock.commands.command.MainCommand;
 import pl.dziubeek.dzcashblock.commands.command.admin.adminWalletCommand;
+import pl.dziubeek.dzcashblock.commands.command.player.balanceTopCommand;
 import pl.dziubeek.dzcashblock.commands.command.admin.fstoneCommand;
 import pl.dziubeek.dzcashblock.commands.command.admin.getBrushCommand;
 import pl.dziubeek.dzcashblock.commands.command.player.WalletCommand;
@@ -13,6 +12,7 @@ import pl.dziubeek.dzcashblock.dzCashBlock;
 import pl.dziubeek.dzcashblock.objects.Brush;
 import pl.dziubeek.dzcashblock.objects.Sender;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,6 +22,24 @@ public class CommandManager implements CommandExecutor, TabCompleter {
 
     private static final List<Command> commands = new ArrayList<>();
     private final dzCashBlock plugin;
+    private static CommandMap commandMap;
+
+    static {
+        try {
+            Field commandMapField = Bukkit.getServer().getClass().getDeclaredField("commandMap");
+            commandMapField.setAccessible(true);
+            commandMap = (SimpleCommandMap) commandMapField.get(Bukkit.getServer());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void addCommands(Command command) {
+        if (commandMap != null) {
+            org.bukkit.command.Command bukkitCommand = new BukkitCommandWrapper(command);
+            commandMap.register(command.getCommand(), bukkitCommand);
+        }
+    }
 
     public CommandManager(dzCashBlock plugin) {
         this.plugin = plugin;
@@ -41,6 +59,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
         new getBrushCommand(plugin);
         new fstoneCommand(plugin);
         new adminWalletCommand(plugin);
+        new balanceTopCommand(plugin);
         return this;
     }
 
@@ -51,8 +70,12 @@ public class CommandManager implements CommandExecutor, TabCompleter {
             plugin.getCommand(cmd.getCommand()).setUsage(cmd.getUsage());
             plugin.getCommand(cmd.getCommand()).setTabCompleter(this);
             plugin.getCommand(cmd.getCommand()).setExecutor(this);
+            addCommands(cmd);
         }
     }
+
+
+
 
     @Override
     public boolean onCommand(CommandSender sender, org.bukkit.command.Command command, String label, String[] args) {

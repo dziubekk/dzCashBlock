@@ -25,13 +25,14 @@ public class MainCommand extends Command {
         this.plugin = plugin;
         this.configManager = plugin.getConfigManager();
         this.cmdManager = plugin.getCommandManager();
+        this.msgconfig = configManager.getMsgConfig();
     }
 
 
     @Override
     public void executeCommand(Sender sender, String[] args) {
         if (args.length < 1) {
-            sender.sendMessage(msgconfig.getStringList("commands.usage") + getUsage());
+            sender.sendMessage(msgconfig.getString("commands.usage").replace("$usage", getUsage()));
             return;
         } else {
             if(args[0].equalsIgnoreCase("help")) {
@@ -49,7 +50,6 @@ public class MainCommand extends Command {
                     configManager.reloadMsgConfig();
                     configManager.reloadDataConfig();
                     cmdManager.loadCommands();
-                    this.msgconfig = configManager.getMsgConfig();
                     sender.sendMessage("$prefix To properly load new aliases, description and usages, you must restart the server!");
                     sender.sendMessage(msgconfig.getString("plugin.reload"));
                 } else {

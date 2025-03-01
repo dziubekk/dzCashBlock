@@ -28,20 +28,24 @@ public class adminWalletCommand extends Command {
     @Override
     public void executeCommand(Sender sender, String[] args) {
         if(args.length < 1) {
-
+            sender.sendMessage(msgconfig.getString("commands.usage").replace("$usage", getUsage()));
+            return;
         } else if(args.length == 1 && args[0].equalsIgnoreCase("check")) {
             Double balance = new Player(sender.getSender().getName()).getBalance();
             String title = msgconfig.getString("commands.wallet.title").replace("$balance", String.format("%.2f", balance)).replace("$currency", configManager.getConfig().getString("settings.currency-symbol"));
             String subtitle = msgconfig.getString("commands.wallet.subtitle").replace("$balance", String.format("%.2f", balance)).replace("$currency", configManager.getConfig().getString("settings.currency-symbol"));
             sender.sendTitle(title, subtitle);
+            return;
         } else if(args.length == 2) {
             if(args[0].equalsIgnoreCase("check")){
                 Double balance = new Player(args[1]).getBalance();
                 String title = msgconfig.getString("commands.admin-wallet.check.title").replace("$balance", String.format("%.2f", balance)).replace("$player", args[1]).replace("$currency", configManager.getConfig().getString("settings.currency-symbol"));
                 String subtitle = msgconfig.getString("commands.admin-wallet.check.subtitle").replace("$balance", String.format("%.2f", balance)).replace("$player", args[1]).replace("$currency", configManager.getConfig().getString("settings.currency-symbol"));
                 sender.sendTitle(title, subtitle);
+                return;
             } else {
-                sender.sendMessage(msgconfig.getStringList("commands.usage") + getUsage());
+                sender.sendMessage(msgconfig.getString("commands.usage").replace("$usage", getUsage()));
+                return;
             }
         } else if(args.length == 3) {
             switch(args[0]) {
@@ -51,6 +55,7 @@ public class adminWalletCommand extends Command {
                         player.setPlayermoney(Double.valueOf(args[2]));
                         String message = msgconfig.getString("commands.admin-wallet.set").replace("$value", args[2]).replace("$currency", configManager.getConfig().getString("settings.currency-symbol").replace("$player", args[1]));
                         sender.sendMessage(message);
+                        return;
                     } else {
                         sender.sendMessage(configManager.getMsgConfig().getString("commands.invalid-number-format"));
                     }
@@ -61,6 +66,7 @@ public class adminWalletCommand extends Command {
                         player.addPlayermoney(Double.valueOf(args[2]));
                         String message = msgconfig.getString("commands.admin-wallet.add").replace("$value", args[2]).replace("$currency", configManager.getConfig().getString("settings.currency-symbol").replace("$player", args[1]));
                         sender.sendMessage(message);
+                        return;
                     } else {
                         sender.sendMessage(configManager.getMsgConfig().getString("commands.invalid-number-format"));
                     }
@@ -71,12 +77,13 @@ public class adminWalletCommand extends Command {
                         player.removePlayermoney(Double.valueOf(args[2]));
                         String message = msgconfig.getString("commands.admin-wallet.take").replace("$value", args[2]).replace("$currency", configManager.getConfig().getString("settings.currency-symbol").replace("$player", args[1]));
                         sender.sendMessage(message);
+                        return;
                     } else {
                         sender.sendMessage(configManager.getMsgConfig().getString("commands.invalid-number-format"));
                     }
                     return;
             }
-            sender.sendMessage(msgconfig.getStringList("commands.usage") + getUsage());
+            sender.sendMessage(msgconfig.getString("commands.usage").replace("$usage", getUsage()));
         }
     }
 }

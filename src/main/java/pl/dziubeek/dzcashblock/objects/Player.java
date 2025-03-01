@@ -75,6 +75,11 @@ public class Player {
         return this;
     }
 
+    public Player removePlayermoney(Double removemoney) {
+        this.playermoney = this.playermoney - removemoney;
+        return this;
+    }
+
     public void savePlayer() {
         plugin.getDataHandler().savePlayer(this);
     }

@@ -23,6 +23,12 @@ commands:
       - "awallet"
     usage: "/adminwallet <check/set/add/take> <player> [amount]"
     description: "Edit wallet of other player!"
+  balancetop:
+    aliases:
+      - "baltop"
+      - "topwallet"
+    usage: "/balancetop"
+    description: "Shows the richest players!"
 
 brushes:
   1:
@@ -67,7 +73,19 @@ brushes:
     material: Material.BLAZE_ROD
 
 settings:
+  balancetop:
+    gui-title: "BALANCE TOP"
+    gui-rows: 3
+    gui-noanswer: "&6N/A"
+    gui-items:
+      playeritem:
+        name: "$index. $player"
+        lore:
+          - "&6Balance: $balance"
+
+
   currency-symbol: "$"
+  cancel-drop-brush: true
   nobreak-blocks:
     - DIAMOND_ORE
     - BEDROCK

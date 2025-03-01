@@ -6,6 +6,8 @@ import pl.dziubeek.dzcashblock.dzCashBlock;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class ConfigManager {
 
@@ -64,12 +66,17 @@ public class ConfigManager {
         createMessagesConfig();
         createDataConfig();
         messagesconfig = YamlConfiguration.loadConfiguration(msgfile);
-        messagesconfig.options().copyDefaults(true);
+        InputStream defaultStream = plugin.getResource("messages.yml");
+        if (defaultStream != null) {
+            YamlConfiguration defaultConfig = YamlConfiguration.loadConfiguration(new InputStreamReader(defaultStream));
+            messagesconfig.setDefaults(defaultConfig);
+            messagesconfig.options().copyDefaults(true);
+        }
         saveMsgConfig();
         dataconfig = YamlConfiguration.loadConfiguration(datafile);
         saveDataConfig();
         this.config = plugin.getConfig();
-        this.config.options().copyDefaults(true);
+        plugin.getConfig().options().copyDefaults(true);
         saveConfig();
         messagesconfig = YamlConfiguration.loadConfiguration(msgfile);
         dataconfig = YamlConfiguration.loadConfiguration(datafile);

@@ -12,7 +12,7 @@ commands:
     - "&6/dzcashblock - main command"
     - "&6/wallet - shows up your wallet"
     - "$prefix"
-  usage: "$prefix &6Poprawne użycie: &b$usage"
+  usage: "$prefix &6Usage: &b$usage"
   nopermission: "$prefix &cYou don't have permission to use this command. ($permission)" #$permission means required permission
   specifybrushlevel: "$prefix &cPlease specify a brush level."
   invalidbrushlevel: "$prefix &cInvalid brush level."
@@ -20,6 +20,7 @@ commands:
   brushreceived: "$prefix &aYou have received a brush: $brush"
   only-player-command: "$prefix Only player can specify this command!"
   invalid-number-format: "$prefix &cInvalid number format!"
+  brushdropcancelled: "$prefix &cYou can't drop brush!"
   fstone:
     money-put: "$prefix &aYou set this block as $value!"
   wallet:

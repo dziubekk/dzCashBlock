@@ -21,12 +21,6 @@ public class DataHandler {
         this.configManager = plugin.getConfigManager();
     }
 
-    public Player loadPlayer(String path) {
-        String nick = configManager.getDataConfig().getString(path + ".nickname");
-        Double playermoney = configManager.getDataConfig().getDouble(path + ".balance");
-        return new Player(nick, playermoney);
-    }
-
     public void savePlayer(Player p) {
         String nick = p.getNick();
         Double playermoney = p.getBalance();

@@ -29,6 +29,7 @@ public class BrushListener implements Listener {
     @EventHandler
     public void onPlayerUseBrush(PlayerInteractEvent event) {
         if (event.getAction() != Action.LEFT_CLICK_BLOCK) return;
+        if (event.getItem() == null) return;
         if (!event.getItem().hasItemMeta()) return;
 
         Player player = event.getPlayer();
