@@ -1,51 +1,66 @@
-# dzCashBlock
+---
 
-dzCashBlock is a Minecraft plugin that enhances gameplay by introducing a money drop system and custom brushes for terrain modification.
+# 🌟 dzCashBlock – Money Drops & Custom Brushes 🌟   
 
-## Features
+🔹 **dzCashBlock** is a powerful and customizable Minecraft plugin that enhances gameplay with an interactive money drop system and advanced terrain editing tools. Whether you're running a survival economy server or a creative building world, DzCashBlock brings new ways to engage players!   
 
-### Money Drops System
-- Players earn virtual currency by breaking specific blocks.
-- Default configuration includes money drops from stone (configurable).
-- Encourages an in-game economy by rewarding mining activities.
+---
 
-### Brushes – Terrain Editing Tools
-- Custom, configurable tools for modifying terrain and structures.
-- Useful for terraforming and world-building.
-- Ideal for administrators and builders.
+## 🚀 **Features**  
 
-### Configuration
-- Fully configurable via `config.yml` and `messages.yml`.
-- Define which blocks drop money and adjust brush settings.
+### 💰 Money Drops System  
+✔️ Earn virtual currency by breaking blocks.   
+✔️ Fully configurable drop rates and amounts.  
+✔️ Encourages mining and exploration with rewarding mechanics.  
 
-## Installation
-1. Download the latest release from the [Releases](https://github.com/dziubekk/dzCashBlock/releases) page.
-2. Place the `dzCashBlock.jar` file in your server's `plugins` folder.
-3. Restart or reload your server.
-4. Configure settings in `config.yml` and `messages.yml` if needed.
+### 🎨 Brushes – Terrain Editing Tools  
+✔️ Powerful tools for modifying terrain quickly and easily.  
+✔️ Ideal for players, that want to earn some money quicker.   
+✔️ Customizable to fit your server’s needs.  
 
-## Commands
-| Command | Description |
-|---------|-------------|
-| `/dzcashblock <authors/help/reload>` | Reloads the plugin configuration. |
-| `/getbrush <type> <player>` | Gives a brush tool to a player. |
-| `/wallet` | Shows player's wallet. |
-| `/adminwallet <add/check/set/take> <player> [amount]` | Edits player's wallet. |
-| `/fstone <amount>` | Puts money in the target block. |
+### ⚙️ Configurable Settings  
+✔️ Adjust drop rates, amounts, and supported blocks in `config.yml`.  
+✔️ Enable or disable specific features based on your server type.  
+✔️ Simple and efficient setup with minimal performance impact.  
 
-## Permissions
-| Permission | Description |
-|------------|-------------|
-| `dzcashblock.admin` | Access to admin commands like reload or fstone. |
-| `dzcashblock.player` | Access to player commands like wallet. |
+---
 
-## Future Updates
-- Additional customization options for money drops.
-- More brush tools and effects.
-- Compatibility improvements.
+## 📥 **Installation**  
+1️⃣ Download the latest version from [SpigotMC](#).  
+2️⃣ Place the `dzCashBlock.jar` file in your server’s `plugins` folder.  
+3️⃣ Restart your server to generate the configuration files.  
+4️⃣ Customize `config.yml` to match your server’s economy and building needs.  
 
-## Contributing
-Feel free to submit issues or pull requests on [GitHub](https://github.com/dziubekk/dzCashBlock).
+---
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 🔧 **Commands & Permissions**  
+
+### 🔹 **Commands**  
+| Command | Description |  
+|---------|-------------|  
+| `/dzcash reload` | Reloads the plugin configuration. |  
+| `/dzbrush give <player>` | Gives a brush tool to a player. |  
+
+### 🔹 **Permissions**  
+| Permission | Description |  
+|------------|-------------|  
+| `dzcash.admin` | Access to admin commands. |  
+| `dzbrush.use` | Allows players to use brush tools. |  
+
+---
+
+## 🌍 **Why Choose DzCashBlock?**  
+✔️ **Enhance your server's economy** – Reward players with in-game money! 
+✔️ **Highly configurable** – Tailor it to your server’s unique style!  
+✔️ **Lightweight & performance-friendly** – No unnecessary lag!  
+
+---
+
+💡 **Future Updates:**  
+We are actively working on adding more customization options, new brush effects, and economy system improvements. Stay tuned! 🚀  
+
+📢 **Need Support?** Visit the [GitHub Repository](https://github.com/dziubekk/dzCashBlock) for updates and contributions.   
+
+💖 If you enjoy DzCashBlock, leave a ⭐ on GitHub and a review on SpigotMC!  
+
+---
